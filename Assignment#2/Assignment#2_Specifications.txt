@@ -1,0 +1,105 @@
+Assignment 2 Specifications
+
+Due: 20 September, 2018 - class time.
+
+Assignment: Write algorithm(s) and program(s) to display certain properties of a given 
+triangle — refer to P4.3 on page 172 in the text for the basics.
+
+Output: Output will include all three Points, the lengths of all three sides, the three 
+angles at the corners, the perimeter and the area of the triangle, and whether the triangle 
+is Equilateral or Right-angled or neither — all in a nicely formatted layout, as directed. 
+Values displayed will be labeled and designated in the appropriate “units”, angles will 
+be displayed in “degrees”. All printed values will be rounded and formatted to four 
+decimal-point accuracy, degrees rounded to the nearest degree. 
+
+Input: Program will prompt a user to provide x- and y-coordinates for the three Points of 
+a triangle. User input must be validated. User prompts must clearly indicate how to enter 
+values for each Point (which is: a pair of x- and y-coordinates, separated by a <return>). 
+A coordinate is a floating-point value and can be positive, negative or zero.
+
+Requirements: Use only material covered in the first six chapters - no arrays, no exceptions. 
+Style requirements as discussed in class expected. Efficiency should always be considered. 
+Round only for output. Choose the most appropriate loop/decision structures and variable 
+types. No graphics.
+
+Provide a Triangle class with only the appropriate constructor(s), methods and instance 
+variables. Triangle class can only have three instance variables — for the three Points. 
+Provide appropriate constants where useful. Provide appropriate accessor and mutator methods, 
+as well as any required utility methods to compute values not stored in the class instance 
+variables.
+
+Also provide a separate Tester program (main) to prompt the user for the three Points, request 
+the required values from the Triangle class, and then provide the display of the required 
+output. All input/output will be handled by the Tester. See section 4.1 (pages 136-138) 
+for hints on building class and tester programs. Test your programs completely and be sure 
+your Tester tests all methods of your Triangle class!
+
+The links: https://www.mathsisfun.com/algebra/trig-solving-triangles.html and 
+https://www.mathsisfun.com/geometry/herons-formula.html may contain some useful triangle 
+formulas. The link: http://www.mathopenref.com/tocs/triangletoc.html may provide some 
+other triangle insights. 
+
+Use of the “Point” class is required - Appendix D (A17-18) in the text — java.awt.geom — 
+along with page 67, may prove useful for Points.
+
+Submission: Your program must be able to compile and execute on FIU SCIS, using the “java” 
+compiler. Test it there before you submit.
+
+Name your primary source code file: TriangleTester.java and your class source code file: 
+Triangle.java . Only two source code files.
+
+Refer to the Moodle documents: “How to Develop a Simple Java Program” and “Style Guide” 
+for details on expected program format and documentation. Review both documents carefully! 
+Note the class source code file will use the class heading documentation, the tester (main) 
+source code file will use the program heading documentation.
+
+Algorithm (pseudocode) should be submitted for each program and in separate text files and 
+included with the Moodle posting and class submission. 
+
+Print out a copy of your primary source code, class source code and pseudocode and submit 
+in class — signed, stapled and collated in the specified sequence: primary source code (w/main) 
+file, class source code file and then the pseudocode text files. 
+
+Post a .zip file — with all source code (.java) and text files — on the Moodle web site. 
+Do not include any extraneous (IDE) files in the Moodle submission.
+
+Program documentation must include the required signed disclaimer (comment) in the 
+heading — no grade will be assigned to programs that omit the disclaimer or signature. 
+
+
+Sample Session: 
+Enter the x,y coordinates of three points in this order (x1,y1) (x2,y2) (x3,y3) 
+   Separate each coordinate with a <return>: 
+0.0000
+0.0000
+2.0000
+0.0000
+0.0000
+2.0000
+
+
+Point 1 coordinates: (0.0000, 0.0000)
+Point 2 coordinates: (2.0000, 0.0000)
+Point 3 coordinates: (0.0000, 2.0000)
+
+Side 1 length: 2.0000 units
+Side 2 length: 2.8284 units
+Side 3 length: 2.0000 units
+
+Angle 1: 90 degrees
+Angle 2: 45 degrees
+Angle 3: 45 degrees
+
+The perimeter of the triangle is 6.8284 units
+The area of the triangle is 2.0000 square units
+The triangle is Equilateral?: False
+The triangle is Right-angled?: True
+
+
+Extra Credit: Credit will only be given for extra credit completed correctly. Document in 
+your program heading that you have completed the extra credit, and be sure these extra methods 
+are called in your Tester program. See me for assistance with any details below that are 
+unclear or unfamiliar. 
+
+Include accessor (getter) methods that allow user access to the Incenter and Centroid points 
+of a triangle. 

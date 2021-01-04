@@ -1,0 +1,187 @@
+Assignment 3 Specifications
+
+Due: 9 October 2018 - class time.
+
+Assignment: Write algorithms and programs to play ‘non-betting’ Craps. Craps is a game played 
+with a pair of dice. In the game, the shooter (the player with the dice) rolls a pair of dice 
+and the number of spots showing on the two upward faces are added up. If the opening roll (called 
+the ‘coming out’ roll) is a 7 (‘natural’) or 11 (‘yo-leven’), the shooter immediately wins 
+the game. If the coming out roll results in a 2 (‘snake eyes’), 3 (‘ace deuce’) or 12 (‘box 
+cars’), then the shooter immediately loses the game (‘craps out’). Otherwise, the game continues 
+and the total for the coming out roll becomes the ‘point’. If the shooters rolls the point 
+before rolling a 7, the shooter wins. If the shooter rolls a 7 before re-rolling the point, 
+the shooter loses, otherwise the game continues. The shooter will continue to roll until they 
+win or lose. Refer to https://en.wikipedia.org/wiki/Craps for the basics and typical names 
+for the sum of the die rolls. Typical play-game pseudocode:
+reset game;
+roll two dice and sum;
+increment number of rolls;
+point = sum;
+if (point is 7 or is 11)
+game is won;
+else if (point is (not 2), is (not 3) and is (not 12)) {
+do {
+roll two dice and sum;
+increment number of rolls;
+value = sum;
+} while (value is (not point) and is (not 7));
+if (value is point)
+   game is won;
+else
+	   game is lost;
+else
+   game is lost;
+}
+
+Output: Output will provide the analysis of running a certain number of games of Craps – presented 
+in clear, aligned, readable and attractive manner. The results of each game (win/lose) and 
+the number of rolls will be recorded by the Analyzer class in order to facilitate an analysis 
+of the game of Craps. Displayed analysis will include data points for:
+(1) total number of games played,
+(2) total number of rolls for all games played, 
+(3) average length (in rolls) of the games played (total rolls/total games),
+(4) longest game played (in rolls).
+
+(5) total number of games won,
+(6) expected probability of winning overall, 
+(7) outcome of winning overall (total wins/total games),
+
+(8) total number of wins that occurred on the coming out roll,
+(9) total number of games that ended on the opening (coming out) roll,
+(10) expected probability of winning on the opening roll,
+(11) outcome of winning on the coming out roll(coming out wins/coming out games),
+(12) expected probability of the games ending on the coming out roll,
+(13) outcome of games ending on the coming out roll (coming out games/total games),
+
+(14) total number of games continuing after the coming out roll (wins & losses),
+(15) expected probability of the games continuing after the coming out roll,
+(16) outcome of games continuing after the coming out roll 
+        ((total games - coming out games)/total games),
+
+(17) summary tally of the number of rolls for each game to finish (1 to 21+), 
+* Coming out games = total number of games that ended on the opening (coming out) roll.
+
+The display of the summary tally data point (17) can be printed horizontal or vertical (vertical 
+is much easier), using all tallies, whose sum should be data point (2). Use of arrays is 
+encouraged.
+
+Empirical outcomes (data points 7, 11, 13, 16) are based upon actual results and will be computed 
+and displayed as a decimal percentage to 4 decimal places. Average game length - data point 
+(3) - will be displayed to 4 decimal places also. Expected probability values (data points 
+6, 10, 12, 15) should be displayed to 4 decimal places, adjacent to the empirical outcomes 
+for easy comparison. Sources for expected values should be documented - external sources for 
+data point (6), or document your actual calculations for (data points 10, 12, 15). Data point 
+labels (1-17) should be displayed near appropriate results. See sample output below.
+
+Input: Input will involve prompting the user for the number of games to be analyzed, an integer 
+between 1 and 1,000,000, inclusive. Input validation is expected.
+
+Requirements: Use only material covered in the first eight chapters. Style requirements as 
+discussed in class expected. Efficiency should always be considered. Round only for output. 
+Choose the most appropriate loop/decision structures and variable types. No switch or breaks 
+statements allowed! No Magic numbers! Use constants/enumerations where appropriate - game 
+results, roll results, and so on. No graphics.
+
+You must write at least three programs: one for the Die class, one for the Craps class (that 
+uses the Die class) and one for the Analyzer (Driver/Main) class (that uses the Craps class). 
+
+The Die class will provide instance variables and methods to support the rolling of a 
+‘fair’ die of any number of sides - an integer between 2-100, inclusive. Auto-correct invalid 
+side parameters: < 2 becomes 2, > 100 becomes 100, default = 6. The method rollDie(sides) will 
+access the sides parameter and will return a random number between 1 and the number of sides, 
+inclusive. Constructor(s) and other methods, as needed. Refer to the text - section 6.9, pages 
+283-284 - for a sample/similar Die class example.
+
+The Craps class will provide constants (i.e. for sums of die rolls), instance variables 
+and methods to play one game. A roll/throw in the game will consist of two rollDie(6) method 
+calls, or with a single rollDice(2,6) method. Since many games will be played (via the Analyzer), 
+in addition to Constructor(s), the Craps class must also have a resetGame() method, a playGame() 
+method, and ‘getter’ methods for the game results and the number of rolls needed to decide 
+the game. Other methods, as needed. 
+
+The Analyzer class will prompt the user for the number games to be played, validate this 
+input, and then conduct the requisite number of games, gathering the required statistics from 
+each game for eventual analysis. See above (Output) for details. The main() should represent 
+your high-level view of the required tasks - other methods, as needed. All input/output should 
+be done from the Analyzer class. Remember, your programs are not allowed to crash…
+
+Submission: Your program must be able to compile and execute on FIU SCIS, using the ‘java’ 
+compiler. Test it there before you submit.
+
+Name your primary source code file: Analyzer.java; and your class source code files: Craps.java 
+and Die.java . Submission must have three source code files.
+
+Refer to the Moodle documents: “How to Develop a Simple Java Program” and “Style Guide” for 
+details on expected program and class format and documentation. Review both documents carefully! 
+Note: the class source code file will use the class heading documentation, the tester (main) 
+source code file will use the program heading documentation.
+
+Algorithm (pseudocode) should be submitted for each program, in a separate text file, and included 
+with the Moodle posting and class submission. 
+
+Print out a copy of your primary source code, each class source code, the pseudocode and submit 
+in class — signed, stapled and collated in the specified sequence: primary source code (w/main) 
+file, two class source code files, and then the pseudocode text file(s). 
+
+Post a .zip file — with all source code (.java) and text files — on the Moodle web site. Please 
+do not include any extraneous (IDE) files in the Moodle submission.
+
+Program documentation must include the required signed disclaimer (comment) in the 
+heading — no grade will be assigned to programs that omit the disclaimer or signature.
+
+Sample Output: 
+
+Summary of Game Statistics
++-----------------------------------------+
+| (1) Total Games         1000000         |
+| (2) Total Rolls         3372851         |
+| (3) Average Rolls       3.3729          |
+| (4) Longest Game        44              |
++-----------------------------------------+
+
+Summary of Win Statistics
++---------------------------------------------------------------------------------+
+| Stat                Games               Outcome             Expected            |
++---------------------------------------------------------------------------------+
+| Total Wins          493449 (5)          0.4934 (7)          0.4929 (6)          |
+| Coming Out Wins     222770 (8)          0.6666 (11)         0.6667 (10)         |
+| Coming Out Games    334374 (9) 		0.3344 (13)         0.3333 (12)         |
++---------------------------------------------------------------------------------+
+
+Summary of Ending Statistics
++---------------------------------------------------------------------------------+
+| Stat                Games               Outcome             Expected            |
++---------------------------------------------------------------------------------+
+| Continuing On Games 665626 (14)         0.6656 (16)         0.6667 (15)         |
++---------------------------------------------------------------------------------+
+
+Summary of Game Lengths in Rolls (17)
++-----------------------------------------+
+| Rolls               # of Games          |
++-----------------------------------------+
+|  1                   334374             |
+|  2                   187707             |
+|  3                   134314             |
+|  4                    96603             |
+|  5                    69067             |
+|  6                    49933             |
+|  7                    35915             |
+|  8                    25670             |
+|  9                    18458             |
+| 10                    13221             |
+| 11                     9617             |
+| 12                     6938             |
+| 13                     4998             |
+| 14                     3612             |
+| 15                     2649             |
+| 16                     1828             |
+| 17                     1440             |
+| 18                      984             |
+| 19                      722             |
+| 20                      516             |
+| 21+                    1434             |
+| - - - - - - - - - - - - - - - - - - - - |
+| Total               1000000             |
++-----------------------------------------+
+
+Note: the values above are only representative, may not be accurate, and results will certainly vary.

@@ -1,0 +1,129 @@
+Assignment 4 Specifications
+
+Due: 18 October 2018 - class time.
+
+Assignment: Write algorithms and programs to create a BetterRectangle sub-class - refer to E9.10 on page 459 
+in the text as a start. Provide a BetterRectangle sub-class that extends the Rectangle class of the standard Java 
+library by adding methods to compute the area, perimeter, slope and mid-point of the rectangle, as well as valid 
+constructors for the new sub-class. Provide a Tester program that will execute and validate the BetterRectangle 
+sub-class. 
+
+Output: Output will provide validation that all new features in the sub-class are functioning properly - 
+presented in a clearly labeled, readable and attractive manner. See sample output below. Display “before” and 
+“after” to feature the mutator method, expected values for the utility methods. All output should be handled by 
+the Tester class, not the super or sub-class. Use the toString() method to display the characteristics of each 
+rectangle.
+
+Input: No user input required. No graphical interface permitted. Rectangles will be “hard-coded” into your 
+Tester class. Specifics for the required rectangles will be provided later. Develop your own test cases until 
+then…
+
+Requirements: Use only material covered in the first nine chapters. Style requirements as discussed in class 
+expected. Efficiency should always be considered. Choose the most appropriate loop/decision structures and 
+variable types. No switch or breaks statements allowed. No magic numbers! Class design guidelines as 
+discussed in class and described in chapter 8 expected. Import libraries as required. No graphics.
+
+You must write at least two programs: one would be the BetterRectangle sub-class extension of the 
+java.awt.Rectangle class; and one Tester class that will perform the actions required to execute and validate all 
+the added or overridden methods of the extended sub-class - to “test” your new class.
+
+The Tester class will create four (4) “better” rectangles, using each of the required constructors. Next, utilizing 
+one of the rectangles, the Tester will execute all of the added accessor methods. Then, using two of the 
+remaining rectangles, the Tester will execute the “utility” methods (and the equals() method) listed below, 
+comparing the two rectangles. Finally, using the remaining rectangle, the Tester will execute the mutator 
+method. Expected values should be displayed for each result to confirm correct results.
+
+The BetterRectangle sub-class may NOT add any new instance variables; however, it can provide new 
+constants. Furthermore, the sub-class may NOT directly use the super-class instance variables – only access 
+them via provided methods. In the sub-class constructors, use the setLocation() and setSize() methods of the 
+Rectangle class. Include an override for the toString() and equals() methods, as appropriate. The sub-class 
+must implement all of the methods/constructors listed below, overriding as appropriate. [parameter names 
+below are not good examples;  simply space-saving identifiers]
+
+Constructors - must use setLocation() and setSize() methods
+	BetterRectangle(): creates a unit rectangle, anchored at Origin
+		[unit rectangle means height = width = 1]
+	BetterRectangle(int width, int height): creates rectangle, anchored at 
+		Origin
+	BetterRectangle(int x, int y, int width, int height): create rectangle
+	BetterRectangle(BetterRectangle rectangle): creates a copy of rectangle
+
+
+Override - as appropriate; use of @Override is required
+ 	equals(rectangle): to ensure object characteristics are identical
+toString(): to also include area, perimeter, slope and mid-point; in 
+	addition to the “anchor” coordinates, width and height.
+
+Added Accessor - no new instance variables, note types, & be careful rounding
+	getArea() return (int): width * height        
+	getPerimeter() return (int): (width + height) * 2
+	getSlope() return (float): height / width [2 decimal place accuracy]
+	getMidPoint() return (Point): center of rectangle + “anchor” corner 
+		(rounded UP to nearest integer)
+
+Added Utilities - (rectangle) is another BetterRectangle
+	congruent(rectangle) return true: if (width + height) is same for both 
+	equivalent(rectangle) return true: if perimeter is same for both
+	similar(rectangle) return true: if area is same for both
+concentric(rectangle) return true: if midpoint is same for both
+
+Added Mutator
+	boolean scaleBy(scale) multiply height & width by a fixed positive 	
+		integer “scale”: returns true upon success, returns false upon 
+		failure.
+
+Use of the “Point” class is required - Appendix D (A17-18) in the text — java.awt.geom — along with page 67, 
+may prove useful for Points. 
+
+Submission: Your program must be able to compile and execute on FIU SCIS, using the “java” compiler. Test 
+it there before you submit.
+
+Name your primary source code file: BRectTester.java 
+and your extended class source code file: BetterRectangle.java.
+
+Refer to the Moodle documents: “How to Develop a Simple Java Program” and “Style Guide” for details on 
+expected program and class format and documentation. Review both documents carefully! Note: the class 
+source code file will use the class heading documentation, the tester (main) source code file will use the 
+program heading documentation.
+
+Algorithm (pseudocode) should be submitted for each program and in a separate text file and included with the 
+Moodle posting and class submission. 
+
+Print out a copy of your primary source code, class source code and pseudocode and submit in class — signed, 
+stapled and collated in the specified sequence: primary source code (w/main) file, class source code files and 
+then the pseudocode text file(s). 
+
+Post a .zip file — with all source code (.java) and text files — on the Moodle web site. Do not include any 
+extraneous (e.g. IDE, output) files in the Moodle submission.
+
+Program documentation must include the required signed disclaimer (comment) in the heading — no grade 
+will be assigned to programs that omit the disclaimer or signature.
+
+Sample Output:
+
+A: BetterRectangle[x=0,y=0, width=4, height=3, area=12, perimeter=14, slope=0.75, mid-point=java.awt.Point[x=2,y=2]]
+B: BetterRectangle[x=0,y=0, width=4, height=3, area=12, perimeter=14, slope=0.75, mid-point=java.awt.Point[x=2,y=2]]
+C: BetterRectangle[x=1,y=1, width=3, height=4, area=12, perimeter=14, slope=1.33, mid-point=java.awt.Point[x=3,y=3]]
+D: BetterRectangle[x=0,y=0, width=1, height=1, area=1, perimeter=4, slope=1.00, mid-point=java.awt.Point[x=1,y=1]]
+
+Accessor methods being executed for Rectangle A...
+A: BetterRectangle[x=0,y=0, width=4, height=3, area=12, perimeter=14, slope=0.75, mid-point=java.awt.Point[x=2,y=2]]
+   Area:	12
+   Perimeter:	14
+   Slope:	0.75
+   MidPoint:	(2,2)
+
+Utility methods being executed for Rectangle B and C...
+B: BetterRectangle[x=0,y=0, width=4, height=3, area=12, perimeter=14, slope=0.75, mid-point=java.awt.Point[x=2,y=2]]
+C: BetterRectangle[x=1,y=1, width=3, height=4, area=12, perimeter=14, slope=1.33, mid-point=java.awt.Point[x=3,y=3]]
+   Equals? 	false		Expected: false
+   Congruent? 	true		Expected: true
+   Equivalent? 	true		Expected: true
+   Similar? 	true		Expected: true
+   Concentric? 	false		Expected: false
+
+Mutuator methods being executed for Rectangle D...
+D: BetterRectangle[x=0,y=0, width=1, height=1, area=1, perimeter=4, slope=1.00, mid-point=java.awt.Point[x=1,y=1]]
+   Scale by  3? true
+   Scale by -3? false
+D: BetterRectangle[x=0,y=0, width=3, height=3, area=9, perimeter=12, slope=1.00, mid-point=java.awt.Point[x=2,y=2]]

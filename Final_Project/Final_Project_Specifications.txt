@@ -1,0 +1,158 @@
+Assignment 6 Specifications
+
+Due: 29 November 2018 - class time.
+
+Assignment: Write a set of algorithms and programs to compute and create three tables 
+for the Fibonacci numbers: one recursive, one ‘fast recursive’, and one iterative. Refer to 
+problem E13.20 on page 624, which expands section 13.3 - the RecursiveFib on pages 
+598-600 - for how to recursively-compute and ‘fast’ recursively-compute the Fibonacci 
+numbers, and pages 601-602 for an iterative solution (LoopFib). This assignment will build 
+on some of the same materials used in Assignment 5.
+
+Provide a FibDemo class that will produce the three tables of n Fibonacci numbers, three 
+classes  (FibSequence, FastFibSequence, and LoopFibSequence) that each implements the 
+next() method as provided in a Sequence interface - same as used in Assignment 5, and 
+exception handling. The number of Fibonacci numbers to be provided in the tables (n) will 
+be input from a file and the three tables themselves will be output to yet another file - both 
+file names to be found on the command-line (refer to section 11.3, pages 527-529) upon 
+execution of the FibDemo class.
+
+Output: The output file will contain one table of recursively-computed Fibonacci integers; 
+followed by a second table of “expected” values - using an iterative algorithm like LoopFib; 
+followed by a third table of ‘fast’ recursively-computed Fibonacci integers. The output file 
+name will be specified on the command-line.
+
+All tables will be labeled, values right-aligned, “square-ish”, and obviously have identical 
+values. Additionally, the execution time (in nanoseconds) to compute all of the values for 
+each table will be printed/labeled, following each table, for comparison purposes - 
+referring to section 14.2 (page 634) or 
+http://www.tutorialspoint.com/java/java_date_time.htm may prove useful. All output will 
+be handled by the Demo or exception-handling classes. The execution time will be 
+computed in nanoseconds, but the display will show the execution time in BOTH 
+nanoseconds and seconds (display seconds to four-decimal place accuracy). See sample 
+output below.
+
+Note: If you observe that one or more of your tables takes longer than a few seconds to 
+complete, then provide an informational message to users (before any tables start) that this 
+process could take about xxx time - xxx time being whatever you observed as the normal 
+time to complete. All error/informational messages, including exception messages, should 
+go the screen, not to the output file. 
+
+Note: Table output is to be integers. Under some combinations of values from the input file, 
+one or more of the computed Fibonacci values may cause arithmetic overflow. This 
+exception must be handled. Do not display the overflow value; instead, your display should 
+be a string of ‘*’ of length equal to the length of the overflow value.
+
+Input: The name of the input file and the output file (no file extension is required) will be 
+specified on the command-line. Input validation and exception handling are expected. All 
+input will be handled by the Demo class. The first integer in the input file is where the 
+Fibonacci sequence will start, beginning with that Fibonacci number. The second integer in 
+the input file will be the number of Fibonacci numbers to be displayed in the tables. The 
+integer values in the input file will be [1-13] & [1-35], respectively, and inclusive. A newline 
+will separate the two integer values. Instructions for compilation/execution should include 
+command-line input details and requirements, and document that the Sequence interface, 
+and the input file, need to be in the same directory with your source code.
+
+Requirements: Use only material covered in the first fourteen chapters. Style 
+requirements as discussed in class expected. Efficiency should always be considered – 
+especially in the fast recursive algorithm. Choose the most appropriate loop/decision 
+structures and variable types. No switch or breaks statements allowed. No magic numbers! 
+Class design guidelines as discussed in class and described in chapters 8/12 expected. 
+Import libraries as required. No graphics permitted.
+
+You will use the Sequence interface [containing the next() method] as defined in Worked 
+Example 10.1. You must write at least five programs: three will be the FibSequence, 
+FastFibSequence, and LoopFibSequence classes that will each implement the interface; one 
+will be the FibDemo class that will perform the demonstration; and one or more classes to 
+handle user-defined exceptions; and perhaps a “table” class, or other classes, as required.
+
+FibDemo will access the input (and output) files and read/validate the entries. A trio of 
+separate loops will then be executed, requesting the next Fibonacci number the requisite 
+number of times. System time, before and after each loop, will facilitate determining 
+execution time for each table. 
+
+At a minimum, exceptions for File-Not-Found, Empty-File, Non-Integer-Input, Invalid-Input 
+(negative/zero, greater-than-maximum, invalid number of arguments) and Arithmetic 
+Overflow will be handled for input/output. Invalid-Input and Arithmetic Overflow will be a 
+user-defined exception class - section 11.4.5 (page 540-541) and section 11.5 (page 545) 
+may prove useful. All files must be opened/closed properly, even if there are exceptions. 
+User-defined exception classes will use the class documentation standards. All 
+exception/error messages should go to the screen and should be instructive: what is invalid, 
+usage example, exact error, etc. Include the PrintStackTrace(), where appropriate. No 
+abnormal terminations are allowed – be sure to gracefully exit your program where 
+appropriate!
+
+Each FibSequence class will implement its own next() method and any other 
+methods/instance variables required to create the sequence of Fibonacci numbers.
+
+Execution could look like:
+          $ java FibDemo infile outfile
+	
+
+Extra credit: will be considered for additional exception handling. Document in your 
+program heading that you have completed extra credit, and which exceptions you wish to 
+be considered as extra credit. For example: Array-out-of-Bounds, File-OverWrite, etc. Other 
+exceptions should be pre-confirmed with the instructor for use as extra credit.
+
+
+Submission: Your program must be able to compile and execute on FIU SCIS, using the 
+“java” compiler. Test it there before you submit
+
+Please name your primary source code file: FibDemo.java, and your class source code files: 
+FibSequence.java, FastFibSequence.java, and LoopFibSequence.java; and your user-defined 
+exception class source code file: UserInvalidInputException.java.
+
+Refer to the Moodle documents: “How to Develop a Simple Java Program” and “Style 
+Guide” documents for details on required program and class format and documentation. 
+Review all documents carefully! Note: the class source code file will use the class heading 
+documentation, the demo (main) source code will use the program heading documentation.
+
+Algorithm (pseudocode) should be submitted for each program and in a single text file and 
+included with the Moodle posting and class submission. 
+
+Print out a copy of your primary source code, class source code, other source code, 
+exceptions source code, and pseudocode and submit in class — signed, stapled and collated 
+in the specified sequence: primary source code (w/main) file, class source code files, 
+exceptions file, and then the pseudocode text file. 
+
+Post a .zip file — with all source code (.java) and text files — on the Moodle web site. Do 
+not include any extraneous (e.g. IDE, output) files in the Moodle submission.
+
+Program documentation must include the required signed disclaimer (comment) in the 
+heading — no grade will be assigned to programs that omit the disclaimer or signature.
+
+
+Sample Output: java FibDemo infile outfile	[infile contains: 1 & 35]
+
+Normal Recursive
+          1          1          2          3          5          8
+         13         21         34         55         89        144
+        233        377        610        987       1597       2584
+       4181       6765      10946      17711      28657      46368
+      75025     121393     196418     317811     514229     832040
+    1346269    2178309    3524578    5702887    9227465
+Time to compute: 936,996,000 nanoseconds, 0.9370 seconds
+
+
+Iterative - Expected
+          1          1          2          3          5          8
+         13         21         34         55         89        144
+        233        377        610        987       1597       2584
+       4181       6765      10946      17711      28657      46368
+      75025     121393     196418     317811     514229     832040
+    1346269    2178309    3524578    5702887    9227465
+Time to compute: 118,000 nanoseconds, 0.0001 seconds
+
+
+Fast Recursive
+          1          1          2          3          5          8
+         13         21         34         55         89        144
+        233        377        610        987       1597       2584
+       4181       6765      10946      17711      28657      46368
+      75025     121393     196418     317811     514229     832040
+    1346269    2178309    3524578    5702887    9227465
+Time to compute: 160,000 nanoseconds, 0.0002 seconds
+	
+
+
+Note: sample values above may not be accurate – for display purposes only

@@ -1,0 +1,117 @@
+Assignment 5 Specifications
+
+Due: 1 November 2018 - class time.
+
+Assignment: Write algorithms and programs to create a class PrimeSequence that implements 
+the Sequence interface - refer to P10.2 on page 508 in the text – and the next() method. 
+This problem utilizes the Worked Example 10.1 (page 473 in the text - go to 
+wiley.com/go/javaexamples for sample downloads). Provide a Demo program that will produce 
+an arbitrary sequence of n prime numbers in table format and will perform an analysis 
+of those n prime numbers.
+
+Output: Output will provide a table of n prime numbers. The table will be as close to 
+“square” as possible - i.e. same number of rows and columns - with at most 10 entries 
+per row. All entries will be right-aligned. Additionally, output will include a 
+“histogram” of the occurrences of the last digit [0-9] of each prime number. The histogram 
+will be horizontal (not vertical) and will be scaled (as a percentage %), with a legend 
+at the bottom to explain the scale and display the total count of primes. Each digit’s 
+entry (a sequence of *’s) must fit on a single row, and it must be properly labeled (actual 
+count, scaled %). Scale will need to be flexible. Round up fraction percentages. All 
+output should be handled by the Demo class. A sample output is provided below. 
+
+Input: Input will be provided on the command-line (see 11.3, pages 527-529 for details). 
+Two input constants will be placed on the command-line upon execution. For example: java 
+SequenceDemo 2 25 ; where the prime sequence will start with the next prime after the 
+first number (3), and the second number (n) is the number of prime numbers to be sequenced 
+(25). Both numbers will be integers and both numbers must be 1 or greater. Command-line 
+input will need to be validated. If either input fails validation, your program should 
+display why the input failed, and it should gracefully terminate, using System.exit(1). 
+Instructions for compilation/execution should include command-line input details and 
+requirements, and document that the Sequence interface needs to be in the same directory 
+with your source code.
+
+Requirements: Use only material covered in the first ten chapters and section 11.3 - 
+no exception handling permitted. Style requirements as discussed in class expected. 
+Efficiency should always be considered - especially in the determination of primes and 
+validating integers. Choose the most appropriate loop/decision structures and variable 
+types. No switch or breaks statements allowed. No magic numbers! Class design guidelines 
+as discussed in class and described in chapters 8 expected. Import libraries as required. 
+No graphics.
+
+You will use the Sequence interface [containing the next() method] as defined in Worked 
+Example 10.1. You must write at least two programs: one will be the PrimeSequence class 
+that will implement the interface; and one will be the SequenceDemo class that will perform 
+the demonstration/analysis. Document use of external sources, including the text, as 
+required. 
+
+The PrimeSequence class will implement the next() method, an isPrime() method to determine 
+if a number is prime, and any other methods/instance variables required for the class. 
+Note: the first prime number is 2. Document the algorithm used in your prime search.
+
+The SequenceDemo class will accept and validate the command-line input, and starting 
+where specified, request the specified number (n) of primes, collecting data for analysis, 
+and preparing the table and histogram for output. The analysis will entail counting how 
+many instances of each digit [0-9] occur on the last digit of each prime. You may be 
+required to search for (or implement) your own Boolean isInteger() method, for validation.
+
+Additional classes, as required.
+
+The Sequence interface will provide for the next() method. You may download this from 
+wiley.com, but you may NOT modify the interface in any way. I will be using my own copy 
+of the interface when I compile your programs - any interface changes introduced may 
+cause your program to fail to compile.
+
+Use of Arrays/ArrayLists: permitted for your isPrime() method, permitted in SequenceDemo 
+class, but NOT otherwise permitted in PrimeSequence class. In other words, prime numbers 
+may not be “pre-stored” in an Array/ArrayList; however, if you want to store found primes, 
+in order to perform a more efficient search, that is permitted. 
+
+Submission: Your program must be able to compile and execute on FIU SCIS, using the “java” 
+compiler. Test it there before you submit.
+
+Please name your primary source code file: SequenceDemo.java, and your class source code 
+file: PrimeSequence.java .
+
+Refer to the Moodle documents: “How to Develop a Simple Java Program” and “Style Guide” 
+documents for details on required program and class format and documentation. Review 
+all documents carefully! Note: the class source code file will use the class heading 
+documentation, the demo (main) source code file will use the program heading 
+documentation.
+
+Algorithm (pseudocode) should be submitted for each program and in a single text file 
+and included with the Moodle posting and class submission. 
+
+Print out a copy of your primary source code, class source code, other source code, and 
+pseudocode and submit in class — signed, stapled and collated in the specified sequence: 
+primary source code (w/main) file, class source code files, and then the pseudocode text 
+file. 
+
+Post a .zip file — with all source code (.java) and text files — on the Moodle web site. 
+Do not include any extraneous (e.g. IDE, output) files in the Moodle submission.
+
+Program documentation must include the required signed disclaimer (comment) in the 
+heading — no grade will be assigned to programs that omit the disclaimer or signature.
+
+Sample Output: java SequenceDemo 2 25
+
+Printing a sequence of 25 prime numbers:
+     3      5     7    11    13
+    17     19    23    29    31
+    37     41    43    47    53
+    59     61    67    71    73
+    79     83    89    97   101
+
+Last Digit Histogram:
+[0]           				(0,  0%)
+[1]************************	(6, 24%)
+[2]           				(0,  0%)
+[3]****************************	(7, 28%)
+[4]           				(0,  0%)
+[5]****          			(1,  4%)
+[6]           				(0,  0%)
+[7]************************	(6, 24%)
+[8]           				(0,  0%)
+[9]********************		(5, 20%)
+__________________________________
+Total(actual count, %) 		(25, 100%)
+Scaled as %, each * = 1%

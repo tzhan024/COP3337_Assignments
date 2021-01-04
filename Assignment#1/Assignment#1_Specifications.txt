@@ -1,0 +1,64 @@
+Assignment 1 Specifications [modified]
+
+Due: 6 September, 2018 - class time.
+
+Assignment: Write an algorithm (pseudocode) and program to compute e. The 
+calculation of the important mathematical constant e will be done as the sum of 
+an infinite series:
+        ∞   
+    e = ∑ 1/n!     
+       n=0      
+             
+See https://en.wikipedia.org/wiki/E_(mathematical_constant) for details.
+
+Output: Output will include your computed value for e, the math library constant
+“expected value” for e and the number of iterations (loop executions) it took to 
+reach sixteen-decimal-place accuracy (2.7182818284590450). Make your output clean, 
+labeled, and easy to read for comparing results. No computational rounding is 
+allowed. Acceptable output would look something like:
+
+	Computed value of e : 2.7182818284590450
+	Expected value of e : 2.7182818284590450
+	Required iterations : 30
+
+Note: # of iterations above is not correct.
+
+Input: No user input.
+
+Requirements: Use only material covered in the first six chapters. Style 
+requirements as discussed in class expected. No graphics.
+
+Efficiency should always be considered. Always choose the most appropriate 
+loop/decision structures and variable types. No computational rounding is allowed. 
+Use of appropriate constants expected - e.g. for expected value, desired delta. 
+
+You may NOT use the math library constant in your computation - directly or indirectly. 
+Use ONLY the “delta” (difference) of your running computation to determine 
+when to stop your loop. [Hint: consider when the difference between 
+subsequent computations ceases to “meaningfully” affect your computation.]
+
+Submission: Your program must be able to compile and execute on FIU SCIS, 
+using the “java” compiler. Test it there before you submit!
+
+Name your source code file: ComputeE.java . Only one source code file.
+
+Refer to the Moodle documents: “How to Develop a Simple Java Program” and “Style 
+Guide” for details on expected program format and documentation. Review both 
+documents carefully!
+
+Algorithm (pseudocode) should be submitted in a separate text (or .pdf) file and 
+included with the Moodle posting and class submission. Refer to pages 18-22 in 
+the text for assistance with pseudocode requirements.
+
+Print out a copy of your source code and pseudocode and submit in class – signed, 
+stapled and collated in the specified sequence: primary source code (w/main) file 
+(on top) and then the pseudocode text file. Submit in class NO LATER THAN the first 
+15 minutes of class.
+
+Post a .zip file — with all source code (.java) and pseudocode files — on the Moodle 
+web site. Do NOT include any extraneous (IDE) files in the Moodle submission. Post 
+NO LATER THAN the start time of class - no exceptions!
+
+Program documentation must include the required signed disclaimer (comment) in 
+the heading - no grade will be assigned to programs that omit the disclaimer or 
+signature.
